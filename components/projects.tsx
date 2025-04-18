@@ -1,39 +1,65 @@
 "use client";
 
-import React from "react";
+import React, { useCallback } from "react";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import useEmblaCarousel from 'embla-carousel-react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects", 0.5);
+  const { ref: sectionRef } = useSectionInView("Projects", 0.5);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
+    <section ref={sectionRef} id="projects" className="scroll-mt-28 mb-28 relative">
       <SectionHeading>My projects</SectionHeading>
-      <div>
-        {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
-            <Project {...project} />
-            {/* Render Tags Externally Below Each Project */}
-            <div className="flex flex-wrap justify-start gap-2 mt-4 mb-8 px-5 sm:px-0 sm:pl-10 sm:group-even:pl-8">
-              {project.tags.map((tag, tagIndex) => (
-                <motion.span
-                  key={tagIndex}
-                  className="bg-black/10 text-gray-800 px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full backdrop-blur-[2px] border border-black/5 shadow-lg shadow-black/[0.03] hover:bg-black/20 transition dark:bg-white/10 dark:hover:bg-white/20 dark:text-white/70"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * tagIndex }} // Adjusted delay for per-project tags
-                >
-                  {tag}
-                </motion.span>
-              ))}
+
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {projectsData.map((project, index) => (
+            <div className="flex-[0_0_90%] sm:flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_45%] min-w-0 pl-4" key={index}>
+              <Project {...project} />
+              <div className="flex flex-wrap justify-start gap-2 mt-4 mb-8 px-1">
+                {project.tags.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className="bg-black/10 text-gray-800 px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full backdrop-blur-[2px] border border-black/5 shadow-lg shadow-black/[0.03] dark:bg-white/10 dark:text-white/70"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </React.Fragment>
-        ))}
+          ))}
+        </div>
       </div>
+
+      <button
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 bg-white/80 dark:bg-black/80 p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-black focus:outline-none transition ml-2"
+        onClick={scrollPrev}
+        aria-label="Previous project"
+      >
+        <ChevronLeftIcon className="h-6 w-6 text-gray-800 dark:text-white" />
+      </button>
+      <button
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 bg-white/80 dark:bg-black/80 p-2 rounded-full shadow-md hover:bg-white dark:hover:bg-black focus:outline-none transition mr-2"
+        onClick={scrollNext}
+        aria-label="Next project"
+      >
+        <ChevronRightIcon className="h-6 w-6 text-gray-800 dark:text-white" />
+      </button>
+
     </section>
   );
 }
