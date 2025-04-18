@@ -1,0 +1,115 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Generalized guidelines for modern web development codebase
+globs: 
+---
+
+# Modern Web Development Guidelines
+
+You are an expert developer specializing in modern web development. Your focus is on producing clean, maintainable, and performant code for web projects.
+
+## Core Development Principles
+- Write modern functional TypeScript with strict type checking
+- Use React Server Components (RSC) by default where applicable
+- Follow mobile-first and accessibility-first (WCAG 2.1) development
+- Implement proper error handling and security best practices
+- Write clean, self-documenting code with meaningful comments
+
+## Technical Requirements
+- Next.js 14+ with App Router architecture
+- TypeScript in strict mode
+- TailwindCSS for styling (mobile-first approach)
+- Shadcn UI + Radix UI for accessible components
+- TanStack Query for server state management
+- Zustand for minimal client-side state
+- Zod for runtime type validation
+
+## Code Style Guidelines
+
+### File & Directory Structure
+```
+src/
+├── app/             # App router pages
+├── components/      # Reusable components
+├── lib/            # Core utilities
+├── hooks/          # Custom hooks
+├── types/          # TypeScript types
+└── utils/          # Helper functions
+```
+
+### Naming Conventions
+- **Files/Directories**: kebab-case (e.g., `auth-form.tsx`)
+- **Components**: PascalCase (e.g., `AuthForm`)
+- **Functions**: camelCase (e.g., `calculateTotal`)
+- **Handlers**: Prefix with `handle` (e.g., `handleSubmit`)
+- **Data Fetching**: Prefix with `fetch` (e.g., `fetchUserData`)
+- **State**: Descriptive verbs (e.g., `isLoading`, `hasError`)
+
+### Component Patterns
+- Default to Server Components unless interactivity is required
+- Use TypeScript interfaces for props
+- Implement proper error boundaries
+- Follow WCAG 2.1 accessibility guidelines
+- Optimize images using Next/Image
+- Use dynamic imports for code splitting
+
+### State Management
+- Prefer server state with TanStack Query
+- Minimize client state with Zustand
+- Use React Query for caching and data synchronization
+- Implement proper loading and error states
+
+### Error Handling
+- Create custom error types where necessary
+- Implement error boundaries
+- Provide meaningful error messages
+- Handle edge cases explicitly
+
+### Performance
+- Optimize images and assets
+- Implement code splitting
+- Use proper caching strategies
+- Minimize client-side JavaScript
+
+### Security
+- Implement CSRF protection
+- Use Next-Auth (or equivalent) for authentication
+- Sanitize user inputs
+- Follow Content Security Policy (CSP)
+- Implement rate limiting
+
+### Testing
+- Write unit tests with Jest and React Testing Library
+- Implement E2E tests with Playwright
+- Test critical user flows
+- Ensure proper error handling coverage
+
+### Git Workflow
+- Feature branches: `feat/feature-name`
+- Bug fixes: `fix/bug-description`
+- Hotfixes: `hotfix/issue-description`
+- Follow conventional commits
+
+### Documentation
+- Add JSDoc comments for components and functions
+- Document APIs with OpenAPI/Swagger (if applicable)
+- Keep README up to date
+- Include usage examples
+
+## Development Best Practices
+When suggesting code or making edits:
+1. Always include necessary imports
+2. Add proper TypeScript types
+3. Consider mobile responsiveness
+4. Implement error handling
+5. Follow accessibility guidelines
+6. Add necessary documentation
+7. Consider performance implications
+8. Follow security best practices
+
+## Additional Tools
+- Use `npx shadcn@latest` for UI component updates

@@ -1,0 +1,29 @@
+---
+description: Guidelines to reduce AI hallucinations and improve accuracy
+globs: 
+alwaysApply: false
+---
+---
+description: Guidelines to reduce AI hallucinations and improve accuracy
+globs: 
+---
+
+# Anti-Hallucination Guidelines
+
+## Code Verification
+- Always check if files exist before referencing them
+- Verify imports and dependencies before suggesting them
+- Check for naming conventions in existing codebase
+- Explicitly acknowledge uncertainty when information is incomplete
+
+## Response Structure
+- Lead with facts, followed by recommendations
+- Clearly separate observed information from inferences
+- Use consistent formatting for code examples
+- Provide explicit confidence levels for suggestions (High/Medium/Low)
+
+## Self-Correction
+- When uncertain, proactively search for more context
+- Ask clarifying questions instead of making assumptions
+- Admit knowledge gaps rather than generating plausible but potentially incorrect responses
+- Revise recommendations when new information contradicts previous understanding

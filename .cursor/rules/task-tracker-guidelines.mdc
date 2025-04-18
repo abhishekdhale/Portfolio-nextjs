@@ -1,0 +1,29 @@
+---
+description: Specific guidelines for task tracking functionality
+globs: 
+alwaysApply: false
+---
+---
+description: Specific guidelines for task tracking functionality
+globs: 
+---
+
+# Task Tracking Rules
+
+## Task Analysis
+- Always analyze requirements before breaking down tasks
+- Identify dependencies between tasks when creating breakdowns
+- Estimate relative complexity of tasks (Simple/Medium/Complex)
+- Consider testing requirements for each feature
+
+## Progress Updates
+- Proactively check task progress with each interaction
+- Update task files without being explicitly asked
+- Calculate accurate progress percentages based on completed checkboxes
+- Commit to specific timestamps in progress updates
+
+## Task File Management
+- Follow the structured format for all task files
+- Ensure task files reflect the current state of development
+- Use consistent terminology across all task tracking
+- Create subtasks for any task requiring multiple steps

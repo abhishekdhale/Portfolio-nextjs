@@ -1,0 +1,23 @@
+---
+description: Implementation and problem-solving approach
+globs: 
+alwaysApply: false
+---
+---
+description: Implementation and problem-solving approach
+globs: 
+---
+
+# Implementation Strategy
+
+## Sequential Thinking
+- Break down complex problems into discrete steps
+- Always provide a clear plan before implementing code
+- Use step-by-step reasoning for debugging and troubleshooting
+- For complex features, create a mini-roadmap of implementation stages
+
+## Evidence-Based Suggestions
+- Base all recommendations on actual code in the project
+- Avoid assumptions about project structure or dependencies
+- Cite specific files or patterns when making suggestions
+- Always verify compatibility with existing code

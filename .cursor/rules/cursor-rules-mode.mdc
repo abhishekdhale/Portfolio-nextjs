@@ -1,0 +1,47 @@
+---
+description: This document describes the guidelines for handling AI modes (Planning and Action), task tracking, and debugging operations, ensuring smooth transitions and effective problem solving.
+globs: 
+alwaysApply: false
+---
+---
+title: "Cursor Rules: AI Mode Transitions, Task Management & Debugging"
+description: "This document describes the guidelines for handling AI modes (Planning and Action), task tracking, and debugging operations, ensuring smooth transitions and effective problem solving."
+---
+
+# Cursor Rules: AI Mode Transitions, Task Management & Debugging
+
+## Overview
+This file provides consolidated rules for managing AI operational modes—ensuring that the system correctly handles planning versus execution—as well as guidelines for task tracking and debugging. These procedures are designed to help maintain clarity and precision during every interaction.
+
+## AI Modes: Planning vs. Action
+### Planning Mode
+- **Triggers:** Keywords such as "plan", "analyze", "evaluate", "outline", or "review" activate this mode.
+- **Process:** In Planning Mode, the agent gathers detailed information, asks clarifying questions, and builds comprehensive plans.
+- **Output Format:** Begins with "📝 Planning Mode Initiated" and ends with "📝 Planning Complete". This mode is read-only to ensure careful analysis.
+
+### Action Mode
+- **Triggers:** Keywords like "implement", "create", "modify", "fix", or "act" trigger Action Mode.
+- **Execution:** The agent transitions to Action Mode only after confirming alignment with a previously established plan.
+- **Output Format:** Begins with "⚙️ Action Mode Initiated" and ends with "⚙️ Action Complete". A confirmation prompt (e.g., "Would you like to switch to Action mode?") must be provided.
+
+### Mode Transition Guidelines
+- **Automatic Detection:** Transitions are based on context, but switching from Planning to Action requires explicit user confirmation.
+- **Validation:** Prior to executing any changes, ensure that the existing plan and context have been thoroughly validated.
+
+## Task Tracking Guidelines
+- **Task Breakdown:** Automatically decompose user requirements into clear, manageable tasks with progress tracked via Markdown checklists.
+- **Metadata Usage:** New task files should include metadata such as title, creation date, current progress, and status.
+- **Progress Updates:** Update task statuses with checkboxes and timestamps. Proactively ask for status updates and reflect the current progress accurately.
+
+## Debugging & Sequential Thinking
+- **Debug Command Usage:** Use debug commands (e.g., `/debug`) to gather console logs, screenshots, and performance metrics in a structured report.
+- **Sequential Reasoning:** Approach troubleshooting with clear, step-by-step procedures. Confirm tool availability and user permissions (especially for screenshot capture) before collecting data.
+- **Actionable Insights:** Provide categorized insights (errors, warnings, logs) and specific recommendations for resolving issues.
+
+## Browser Tools & MCP Usage Guidelines
+- **Tool Activation:** Use MCP tools (Brave Search, Puppeteer, Playwright, FireCrawl) only when necessary and after user confirmation.
+- **User Permissions:** Always ensure that necessary browser tools are active and that the user has granted the required permissions.
+- **Conflict Resolution:** Remind users to disable conflicting programs (e.g., Puppeteer) before initiating any MCP-based operations.
+
+## Conclusion
+By following these mode transition rules, task management protocols, and debugging procedures, the AI agent can deliver a highly accurate and context-rich experience. Consistent application of these guidelines enhances communication, reduces errors, and aligns project execution with established best practices.

@@ -1,0 +1,38 @@
+---
+description: This document outlines guidelines to improve AI agent context pickup, emphasizing evidence-based recommendations, adherence to coding and documentation standards, and modern web development best practices.
+globs: 
+alwaysApply: false
+---
+---
+title: "Cursor Rules: Guidelines for AI Context & Implementation"
+description: "This document outlines guidelines to improve AI agent context pickup, emphasizing evidence-based recommendations, adherence to coding and documentation standards, and modern web development best practices."
+---
+
+# Cursor Rules: Guidelines for AI Context & Implementation
+
+## Overview
+This document consolidates best practices and recommendations drawn from multiple current guidelines. It is designed to improve the AI agent’s ability to accurately incorporate project context, make evidence-based suggestions, and follow modern web development standards.
+
+## Implementation Strategy & Evidence-Based Suggestions
+- **Sequential Problem Solving:** Break down complex issues into discrete, logical steps and provide a clear plan before executing any code.
+- **Evidence-Based Recommendations:** Base all suggestions on existing project code and patterns. Always verify file paths and dependencies before referencing them.
+- **Context Integration:** Use neighboring file context and explicit documentation references to validate assumptions and check for consistency with established project patterns.
+
+## Modern Development & Coding Best Practices
+- **Language & Frameworks:** Utilize modern TypeScript and React with strict mode enabled, favoring React Server Components when applicable.
+- **Code Organization:** Adhere to established naming conventions and directory structures (e.g., kebab-case for files, PascalCase for components).
+- **Readability and Maintainability:** Write clean, self-documenting code with in-line comments and clear documentation. Always prefer reusing existing components over creating duplicates.
+- **Performance & Security:** Implement mobile-first, accessible designs (WCAG 2.1) and follow best practices for performance optimization and security measures.
+
+## Documentation & Technical Context
+- **Primary Documentation:** Always refer to the PRD and other project documentation files for requirements and context before making any changes.
+- **Synchronized Updates:** Keep documentation current with code changes; ensure all significant changes are clearly documented.
+- **Technical Verification:** Review package dependencies and neighboring files to validate that suggested improvements and code changes align with the overall project architecture.
+
+## Anti-Hallucination & Verification
+- **File and Dependency Checks:** Confirm that referenced files exist and use proper naming conventions.
+- **Explicit Uncertainty:** State confidence levels for your suggestions and ask clarifying questions when necessary.
+- **Consistent Formatting:** Separate documented facts from inferences and use clear, explicit language when uncertainty exists.
+
+## Conclusion
+Adhering to these guidelines helps the AI agent maintain high accuracy and a deep understanding of project context. This framework ensures that any implementation or modification is consistent with modern development practices while reducing the risk of miscommunication or error.

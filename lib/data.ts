@@ -5,6 +5,9 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import researchIcon from "@/public/CSUDH.webp";
+import softwareIcon from "@/public/softwareIcon.png";
+import fullstackIcon from "@/public/fullstackIcon.jpeg";
 
 export const links = [
   {
@@ -35,53 +38,61 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Software Engineer Research Assistant",
+    location: "Los Angeles, CA",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
+      "Developed a VR-based assistive app using neural interface technology and .NET Core backend with Redis, enabling gesture-driven interactions for individuals with disabilities. Enhanced real-time performance with machine learning, achieving up to 40% faster interaction and 30% lower latency.",
+    icon: researchIcon,
+    date: "2023 - Present",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "MS in Computer Science",
+    location: "California State University, Dominguez Hills",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "Developed a high-performance ad analytics platform using .NET Core, C#, and SQL Server with integrations from Meta, Google, TikTok, and eBay. Optimized data pipelines and dashboards with Redis caching and Angular components, improving data processing speed by 30% and user interactivity by 25%.",
+    icon: researchIcon,
+    date: "2023 - 2025",
   },
   {
-    title: "Full-Stack Developer",
+    title: "Software Engineer",
+    location: "Cybage Software Pvt Ltd",
+    description:
+      "Developed a high-performance ad analytics platform using .NET Core, C#, and SQL Server with integrations from Meta, Google, TikTok, and eBay. Optimized data pipelines and dashboards with Redis caching and Angular components, improving data processing speed by 30% and user interactivity by 25%.",
+    icon: softwareIcon,
+    date: "2021 - 2023",
+  },
+  {
+    title: "BE in Information Technology",
     location: "Houston, TX",
     description:
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+    icon: fullstackIcon,
+    date: "2015 - 2019",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Media Investment Optimization Platform NYC Based Client",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "I worked as a full-stack developer on this project for 2 years. It's a platform that helps advertisers optimize media investments and maximize ROI.",
+    tags: ["c#", ".NET Core", "Redis", "MVC", "MSSQL", "Docker", "Kubernetes", "AWS"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "Educational Management Solutions for Gov. of US ",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "I worked as a developer on this project for 1.5 years. Built a VR assistive app using neural interfaces to enable gesture-based control, improving accessibility and response time.",
+    tags: ["C#", ".NET Core", "AI", "React", "Unity", "Belnder"],
     imageUrl: rmtdevImg,
   },
-  {
+  /*{
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
-  },
+  },*/
 ] as const;
 
 export const skillsData = [

@@ -1,0 +1,106 @@
+---
+description: Automatically tracks and updates project tasks using checkboxes in Markdown
+globs: 
+alwaysApply: false
+---
+---
+description: Automatically tracks and updates project tasks using checkboxes in Markdown
+globs: 
+alwaysApply: false
+---
+---
+description: Automatically tracks and updates project tasks using checkboxes in Markdown
+globs: 
+---
+
+# Task Tracker
+
+As a Cursor AI assistant, I help break down tasks/features into trackable steps and maintain a progress record using Markdown task lists, automatically updating progress with each interaction.
+
+## Activation
+
+The Task Tracker system activates when:
+- User mentions keywords like "task", "feature", "plan", "track", "breakdown", "checklist", "progress"
+- User requests task management or feature planning
+- User prefixes a message with "Track:" or "TaskTrack:"
+
+## Task File Creation
+
+When activated, I will:
+1. Create a new `.md` file in the `/docs/tasks` directory (creating it if it doesn't exist)
+2. Name the file according to the task/feature (e.g., `auth-system.md`, `payment-gateway.md`)
+3. Include metadata in frontmatter (creation date, last updated, overall progress)
+4. Structure the file with sections for requirements, tasks, subtasks, and progress
+
+## File Structure
+
+```markdown
+---
+title: "Feature Name"
+created: "YYYY-MM-DD"
+updated: "YYYY-MM-DD"
+progress: "0/10"
+status: "In Progress"
+---
+
+# Feature Name
+
+## Overview
+Brief description of the feature and its purpose.
+
+## Requirements
+- Requirement 1
+- Requirement 2
+
+## Tasks
+- [ ] Task 1
+  - [ ] Subtask 1.1
+  - [ ] Subtask 1.2
+- [ ] Task 2
+  - [ ] Subtask 2.1
+
+## Progress Updates
+- YYYY-MM-DD: Created task breakdown
+```
+
+## Task Breakdown Process
+
+When breaking down a task:
+1. Identify the main components/steps needed
+2. Create top-level tasks for each component
+3. Break each task into smaller, actionable subtasks
+4. Estimate complexity for each task
+5. Identify dependencies between tasks
+6. Prioritize tasks in a logical order
+
+## Progress Tracking
+
+With each chat interaction:
+1. Check the task file for current progress
+2. Update task statuses ([ ] to [x]) based on user's work
+3. Calculate and update overall progress percentage
+4. Add progress updates with timestamp
+5. Commit to updating the task file with each significant chat interaction
+
+## Progress Updates
+
+Each chat interaction that includes task progress will:
+1. Check if any tasks are completed
+2. Update the task status with `- [x]` for completed tasks
+3. Add a new entry in the Progress Updates section
+4. Update the progress percentage in the frontmatter
+
+## Task Commands
+
+The user can use these commands:
+- `TaskNew: [name]` - Create a new task file
+- `TaskUpdate: [name]` - Update progress on a specific task
+- `TaskList` - List all existing task files
+- `TaskProgress: [name]` - Show current progress for a task
+
+## Implementation Notes
+
+- Task files should be committed to the repository for team visibility
+- Each task should be specific, measurable, and have a clear completion criteria
+- Progress updates should be timestamped and concise
+- The AI should proactively ask about task status during interactions

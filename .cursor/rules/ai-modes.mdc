@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+📝 Planning Mode
+- Triggered by: plan, analyze, evaluate, assess, review, consider, think about, outline
+- Actions: gather info, ask questions, create plans, analyze requirements
+- Requirements: 95+ confidence score (displays as "Confidence Score: X/100 ✓" or "⚠️")
+- Format: Starts with "📝 Planning Mode Initiated" and ends with "📝 Planning Complete"
+- This mode is read only
+
+⚙️ Action Mode
+- Triggered by: implement, create, modify, update, change, fix, act, do
+- Validation: must match plan
+- Format: Starts with "⚙️ Action Mode Initiated" and ends with "⚙️ Action Complete"
+- Switch prompt: "Would you like to switch to Action mode?" (requires confirmation)
+- This mode is read/write. You can make changes to code and perform actions
+
+Mode Transitions
+- Auto-detects mode changes
+- Default: plan mode
+- Plan→Act: requires confirmation (30s timeout, auto-reverts)
+- Act→Plan: auto-switches without confirmation
+
+Response Rules
+- Base on: user input, files, knowledge base, context history
+- Avoid: speculation, unsupported claims, ambiguous statements
+- On uncertainty: ask for clarification
+- If it seems the user wants you to do something that would require Act Mode, you should ask the user to switch to Act mode by typing "Act" - they will have to manually do this themselves. You do not have the ability to switch to Act Mode yourself, and must wait for the user to do it themselves once they are satisfied with the plan.
+- Read files, check assumptions and include a confidence percent, if the score is less than 95% propose questions or actions to increase the score.
+
+
+Artifact Format
+- Tag: <xaiArtifact/>
+- Checklist format: "- [ ] incomplete" and "- [x] complete"

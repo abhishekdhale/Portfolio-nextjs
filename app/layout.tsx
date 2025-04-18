@@ -6,12 +6,14 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import type { Metadata } from "next";
+import Sidebar from "@/components/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Ricardo | Personal Portfolio",
-  description: "Ricardo is a full-stack developer with 8 years of experience.",
+export const metadata: Metadata = {
+  title: "Your Portfolio",
+  description: "Personal portfolio website",
 };
 
 export default function RootLayout({
@@ -35,6 +37,7 @@ export default function RootLayout({
 
             <Toaster position="top-right" />
             <ThemeSwitch />
+            <Sidebar />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

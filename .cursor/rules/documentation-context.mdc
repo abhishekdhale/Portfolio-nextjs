@@ -1,0 +1,45 @@
+---
+description: Documentation and Context Guidelines
+globs: 
+alwaysApply: false
+---
+---
+description: Documentation and Context Guidelines
+globs: 
+---
+
+# Documentation and Context
+
+## Project Documentation
+- All PRD documents in /docs directory should be treated as the source of truth
+- Verify requirements against PRD before implementing any feature
+- Reference appropriate documentation when suggesting solutions
+- Prefer existing patterns found in the codebase over introducing new ones
+- Always consult the project's PRD.md file at the project root for clear understanding of goals and features
+- Review all additional documentation files within the docs directory provided with the project
+
+## Documentation Updates
+- If additional or updated documentation is required, use MCP servers (Brave Search, Puppeteer, FireCrawl) to locate official and current sources online
+- Document all significant changes and decisions
+- Keep documentation synchronized with code changes
+- Add inline documentation for complex logic or non-obvious implementations
+
+## Technical Context
+- Always check the project structure before making assumptions
+- Verify package.json for dependencies before suggesting new libraries
+- Examine neighboring files to understand code organization and patterns
+- Always check for existing implementations of similar functionality
+
+## Technical Stack Compliance
+- Adhere strictly to the project's established technology stack
+- Do not introduce new technologies unless explicitly instructed and justified
+- You may suggest alternative technologies if beneficial, but never implement them without user confirmation
+- Verify compatibility with existing dependencies before suggesting updates
+- Follow established patterns and conventions within the codebase
+
+## Documentation Standards
+- Use consistent formatting across all documentation files
+- Include examples for complex features or configurations
+- Maintain a clear hierarchy of information
+- Keep documentation up-to-date with code changes
+- Document breaking changes and migrations clearly

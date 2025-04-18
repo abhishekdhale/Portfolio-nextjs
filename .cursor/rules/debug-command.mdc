@@ -1,0 +1,101 @@
+---
+description: Debug tool that collects browser console logs and screenshots
+globs: 
+alwaysApply: false
+---
+---
+description: Debug tool that collects browser console logs and screenshots
+globs: 
+---
+
+# Browser Console Debug Tool
+
+## Purpose
+This rule enables a debugging command to collect browser console logs and take screenshots when debugging web applications.
+
+## Usage
+When the user types `/debug`, this tool will:
+1. Connect to the browser using Browser Tools MCP
+2. Collect console logs and errors
+3. Take a screenshot of the current page state
+4. Format and present debugging information
+
+## Implementation
+
+### Activation Command
+- Command: `/debug`
+- Alternative commands: `/console`, `/logs`
+
+### Actions
+When triggered, the debug tool will:
+1. Check if Browser Tools MCP is available
+2. Connect to the active browser tab
+3. Extract console messages (logs, warnings, errors)
+4. Take a screenshot of the current page
+5. Format results in a structured debug report
+
+### Debug Report Format
+The debug report will include:
+- Browser information (type, version)
+- Console logs (categorized by type)
+- Error stack traces
+- Screenshot of the current page state
+- Network request issues (if any)
+- Performance metrics
+
+### Error Handling
+- If Browser Tools MCP is not available, provide clear instructions to enable it
+- If browser connection fails, suggest troubleshooting steps
+- Retry logic for failed screenshot or console log collection
+
+## Example Usage
+
+User: `/debug`
+AI:
+
+🫡 Initiating browser debugging session...
+Connecting to browser... ✓
+Collecting console logs... ✓
+Taking screenshot... ✓
+Debug Report (2023-05-15 14:32:21)
+Browser Information
+Chrome 112.0.5615.138
+Windows 10
+Console Logs
+Errors (2)
+Uncaught TypeError: Cannot read property 'data' of undefined
+at processData (app.js:245)
+at handleClick (app.js:78)
+Failed to load resource: net::ERR_CONNECTION_REFUSED (api/users)
+Warnings (1)
+[Deprecation] Using unprefix 'webkitRequestAnimationFrame' is deprecated
+Logs (5)
+"User clicked submit button"
+"Form data:", {name: "Test User", email: "test@example.com"}
+"API request started"
+"DOM loaded in 352ms"
+"Component mounted"
+Screenshot
+[Screenshot of current page state]
+Recommendations
+Fix undefined object reference at app.js:245
+Check API endpoint connectivity at api/users
+Update deprecated animation frame usage
+Need more details? Try:
+/debug network for network requests
+/debug performance for performance metrics
+/debug dom for DOM inspection
+
+
+## Requirements
+- Browser Tools MCP must be available and connected
+- A Chromium-based browser must be active
+- User must grant necessary permissions for screenshot and console access
+
+## Note to AI
+When responding to `/debug` commands:
+1. Always check if Browser Tools MCP is available before attempting to use it
+2. Request user confirmation before taking screenshots
+3. Format console logs in a readable, categorized manner
+4. Provide actionable insights based on detected issues
+5. Follow up with suggestions for further debugging if needed
