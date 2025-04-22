@@ -87,7 +87,7 @@ export default function Intro() {
               <SiMedium />
             </Link> */}
             <Link
-              href="https://github.com/abhishek-dhale"
+              href="https://github.com/abhishekdhale"
               target="_blank"
               className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-white"
             >
