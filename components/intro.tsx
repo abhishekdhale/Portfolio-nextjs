@@ -141,7 +141,7 @@ export default function Intro() {
         {/* Links - Kept below title/subtitle */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <Link
-            href="https://drive.google.com/file/d/1ZjsBrvs-hX81fqAnBy4e-su3M55sKFai/view?usp=sharing"
+            href="https://drive.google.com/file/d/1MvzMMGX6yXr6lbNnEUZPVqJfAZGr1MHP/view?usp=sharing"
             target="_blank"
             className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition shadow-md"
           >
