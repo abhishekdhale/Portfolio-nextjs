@@ -33,7 +33,7 @@ export default function Skills() {
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="bg-white border border-black/10 rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80 flex items-center gap-2 group transition-colors transition-shadow duration-200 hover:border-[--skill-color] hover:shadow-[0_0_5px_1px_var(--skill-color)]"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -42,8 +42,12 @@ export default function Skills() {
               once: true,
             }}
             custom={index}
+            style={{ '--skill-color': skill.color } as React.CSSProperties}
           >
-            {skill}
+            <span className="group-hover:text-[--skill-color] transition-colors duration-200">
+              {skill.icon}
+            </span>
+            {skill.name}
           </motion.li>
         ))}
       </ul>
